@@ -1,0 +1,28 @@
+{{extend 'layout.html'}}
+{{=IMG(_src=URL('static','proce.JPG'), _alt="Jardin")}}
+
+
+{{for unJardin in row:}}
+<h3>{{=unJardin.Libelle}}</h3>
+
+<h5>Localisation : <i>{{=unJardin.adresse_postale}}</i></h5>
+
+{{if unJardin.Jeux == "OUI":}}
+<h5>Liste des équipements disponibles :</h5>
+    <ul>
+        {{if unJardin.Jeux == "OUI":}} <li>  Jeux pour enfants </li>{{pass}}
+  </ul>
+</table>
+{{pass}}
+
+{{pass}}
+<h4>
+{{if rowsRDV : }}
+    Les Rendez-vous en ce lieu
+</h4> 
+<table class='table'>
+{{for unRDV in rowsRDV:}}
+    <tr><td> {{=unRDV.DateRDV.strftime("%d/%m/%Y")}} &nbsp; {{=unRDV.Commentaire}} </td></tr>
+{{pass}}
+</table>
+{{pass}}

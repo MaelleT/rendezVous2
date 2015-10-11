@@ -1,0 +1,12 @@
+{{extend 'layout.html'}}
+<h3>Liste des jardins Nantais</h3>
+<form action={{=URL('infosJardin')}}>
+Sélectionner un jardin :
+<select name="jardins">
+    {{for unJardin in response._vars['rows']:}}
+    <option value='{{=unJardin.id}}'> {{=unJardin.Libelle}}</option>
+    {{pass}}
+</select>
+<input type="submit">
+</form>
+{{=IMG(_src=URL('static','jardin.jpg'), _alt="Jardin")}}
