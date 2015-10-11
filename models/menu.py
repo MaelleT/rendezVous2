@@ -31,7 +31,7 @@ response.menu = [
             (T('Ajouter un rendez-vous'), False, URL('manager', 'nouveauRDV'), [])
     ])
 ]
-
+response.menu += [(T('DEV 1'), False, URL('default', 'index'), [])]
 DEVELOPMENT_MENU = False
 
 #########################################################################
